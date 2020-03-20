@@ -1,1 +1,1 @@
-web: java -jar target/sweetjane-1.0.jar
+web: java -Dserver.port=$PORT -jar target/sweetjane-0.0.1-SNAPSHOT.jar
