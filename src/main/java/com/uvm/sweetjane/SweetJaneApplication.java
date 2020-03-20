@@ -6,6 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * @author Cynthia Mejia
+ * @author Dyana Montoya
+ * @author Andres Ramirez
+ *
+ */
 @Controller
 @SpringBootApplication
 public class SweetJaneApplication {
