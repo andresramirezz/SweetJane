@@ -1,0 +1,1 @@
+web: java -jar target/sweetjane-1.0.jar
