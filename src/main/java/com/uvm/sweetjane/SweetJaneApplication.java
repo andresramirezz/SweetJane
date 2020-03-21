@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Cynthia Mejia
  * @author Dyana Montoya
  * @author Andres Ramirez
- *
+ *	Token: 27a4b00c-1b54-402b-9b6c-396cdab28b23
+ *	user: andresramirezz@hotmail.com
  */
 @Controller
 @SpringBootApplication
