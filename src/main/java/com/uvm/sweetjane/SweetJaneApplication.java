@@ -19,7 +19,7 @@ public class SweetJaneApplication {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-      return "Sweet Jane synchronized";
+      return "Sweet Jane Ultima prueba";
     }
 
 	public static void main(String[] args) {
