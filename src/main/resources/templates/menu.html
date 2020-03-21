@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+    <!-- My personal Kit's Code from Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/menu.css" th:href="@{/css/menu.css}">
+
+    <title>Welcome to BuyCycle.com!</title>
+</head>
+<body>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-6 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img src="../img/man-avatar.png"/>
+                </div>
+		<div class="alert alert-success" role="alert">
+		  
+		  <h4 class="alert-heading">Well done!</h4>
+
+   			 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+   			 <form th:action="@{/logout}" method="post">
+   		     <input type="submit" value="Logout" class="btn btn-warning"/>
+  			  </form>
+  			  <h1><a th:href="@{/admin}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
+
+		  
+		  <p>Aww yeah, you successfully logged into BuyCycle site.</p>
+		  <hr>
+		  <p class="mb-0">Welcome !!!.</p>
+			
+		</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
