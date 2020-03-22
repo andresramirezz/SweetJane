@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.uvm.sweetjane.dao.UserRepository;
 import com.uvm.sweetjane.model.Authority;
@@ -21,6 +22,8 @@ import com.uvm.sweetjane.model.Authority;
  * @author Andres Ramirez
  *
  */
+
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService{
     @Autowired
     UserRepository userRepository;
