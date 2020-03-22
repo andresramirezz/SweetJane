@@ -5,7 +5,6 @@ package com.uvm.sweetjane.controller;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -26,17 +25,17 @@ public class MainController {
 		return "index";
 	}
 	
-	@GetMapping("/menu")
+	@RequestMapping("/menu")
 	public String menu() {
 		return "menu";
 	}
 	
-	@GetMapping("/user")
+	@RequestMapping("/user")
 	public String user() {
 		return "user";
 	}
 	
-	@GetMapping("/admin")
+	@RequestMapping("/admin")
 	public String admin() {
 		return "admin";
 	}
