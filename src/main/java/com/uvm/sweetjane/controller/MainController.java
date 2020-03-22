@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 public class MainController {
 
-	@RequestMapping({"/","/login"})
+	@RequestMapping("/")
 	@ResponseBody
 	public String index() {
 		return "index";
