@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Cynthia Mejia
@@ -21,8 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 public class MainController {
 
-	@RequestMapping("/")
-	@ResponseBody
+	@RequestMapping({"/","/login"})
+	
 	public String index() {
 		return "index";
 	}
