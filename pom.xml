@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>com.uvm</groupId>
-	<artifactId>jane</artifactId>
+	<artifactId>sweetjane</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Project</name>
 	<description>BuyCycle Project for Spring Boot in PerScholas</description>
