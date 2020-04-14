@@ -13,7 +13,7 @@
 	
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}">
-    <title> BuyCycle.com !  </title>
+    <title> SweetJane.com !  </title>
 
 </head>
 <body>
@@ -21,30 +21,53 @@
 			<div class="col-sm-8 main-section">
 				<div class="modal-content">
 					<div class="col-12 user-img">
-						<img alt="user" src="../img/woman-avatar.png"/>
+						<img alt="user" src="../img/Logo.png"/>
 					</div>
 					<form class="col-12" th:action="@{/login}" method="post">
 						<div class="form-group" id="user-group">
 							<input 	type="text" class="form-control" 
-									placeholder="Rider Name" name="username"/>
+									placeholder="U s u a r i o" name="username"/>
 						</div>
 						<div class="form-group" id="contrasena-group">
 							<input 	type="password" class="form-control" 
-									placeholder="P a s s w o r d" name="password"/>
+									placeholder="C o n t r a s e ñ a" name="password"/>
 						</div>
 						<button type="submit" class="btn btn-primary">
-						<i class="fas fa-bicycle"></i>...Let's ride
+						<i class="fas fa-bicycle"></i>...Ingresar
 						</button>
 					</form>
 	                <div class="col-12 forgot">
-	                    <a href="#">Forgot password?</a>
+	                    <a href="#">Olvidó su contraseña?</a>
 	                </div>
 	                <div th:if="${param.error}" class="alert alert-danger" role="alert">
-			            Invalid username and password.
+			            Usuario y/o contraseña incorrectos.
 			        </div>
 			        <div th:if="${param.logout}" class="alert alert-success" role="alert">
-			            You have been logged out.
+			            La sesión a terminado.
 			        </div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row align-items-end" style="height: 300px">
+				<div class="col">
+					<h3>Universidad del Valle de México</h3>
+				</div>
+				<div class="col">
+					<h4>Cynthia Elva Mejía</h4>
+				</div>
+				<div class="col">
+					<h4>Dyana Montoya</h4>
+				</div>
+				<div class="col">
+					<h4>Jorge Andrés Ramírez</h4>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col" style="align-items: center;">
+					<a style="background-color:black;color:white;text-decoration:none;padding:2px 3px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:10px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@brookelark?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Brooke Lark"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:10px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Brooke Lark</span></a>
 				</div>
 			</div>
 		</div>

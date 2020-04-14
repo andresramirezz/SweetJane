@@ -1,12 +1,12 @@
 body{
-	background: url(../img/HomePage.gif) no-repeat center center fixed;
+	background: url(../img/HomePage.jpg) no-repeat center center fixed;
 	background-size: cover;
 }
 
 .main-section{
     margin:0 auto;
-    margin-top:65%;
-    margin-left:105%;
+    margin-top:20%;
+    margin-left:0%;
     padding: 0;
 }
 
