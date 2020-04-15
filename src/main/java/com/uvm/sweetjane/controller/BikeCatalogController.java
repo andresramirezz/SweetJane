@@ -43,7 +43,7 @@ public class BikeCatalogController {
 		(@ModelAttribute ("bike_catalog") BikeCatalog bc, HttpServletRequest request) {
 		bikeCatalogService.save (bc);
 		
-		MultipartFile bikeImage = bc.getBikeImage();
+		MultipartFile bikeImage = bc.getImagenPastel();
 		
 				try {
 					byte[] bytes = bikeImage.getBytes();

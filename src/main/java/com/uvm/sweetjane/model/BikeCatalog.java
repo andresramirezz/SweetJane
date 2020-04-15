@@ -8,13 +8,7 @@
 
 package com.uvm.sweetjane.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Transient;
-
+import javax.persistence.*;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -24,26 +18,24 @@ public class BikeCatalog {
 	@Id
 	@GeneratedValue( strategy=GenerationType.AUTO )
 	private Long id;
-	private String brand;
-	private String owner;
-	private String nickname;
-	private String publicationDate;
-	private String quality;
-	private String category;
-	private int numberOfMiles;
-	private String format;
-	private int registerNumber;
-	private double shippingWeight;
-	private double listPrice;
-	private double ourPrice;
+	private String nombre;
+	private String sabor;
+	private String porciones;
+	private String fechaPublicacion;
+	private String almacenamiento;
+	private String categoria;
+	private int tiempoPrepar;
+	private String almacen;
+	private double precioLista;
+	private double precioPublico;
 	private boolean active=true;
 	
 	@Column( columnDefinition="text" )
-	private String description;
-	private int inStockNumber;
+	private String descripcion;
+	private int cantidadDisponible;
 	
 	@Transient
-	private MultipartFile bikeImage;
+	private MultipartFile imagenPastel;
 
 	public Long getId() {
 		return id;
@@ -53,100 +45,84 @@ public class BikeCatalog {
 		this.id = id;
 	}
 
-	public String getBrand() {
-		return brand;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setBrand(String title) {
-		this.brand = title;
+	public void setNombre(String title) {
+		this.nombre = title;
 	}
 
-	public String getOwner() {
-		return owner;
+	public String getSabor() {
+		return sabor;
 	}
 
-	public void setOwner(String author) {
-		this.owner = author;
+	public void setSabor(String author) {
+		this.sabor = author;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getPorciones() {
+		return porciones;
 	}
 
-	public void setNickname(String publisher) {
-		this.nickname = publisher;
+	public void setPorciones(String publisher) {
+		this.porciones = publisher;
 	}
 
-	public String getPublicationDate() {
-		return publicationDate;
+	public String getFechaPublicacion() {
+		return fechaPublicacion;
 	}
 
-	public void setPublicationDate(String publicationDate) {
-		this.publicationDate = publicationDate;
+	public void setFechaPublicacion(String publicationDate) {
+		this.fechaPublicacion = publicationDate;
 	}
 
-	public String getQuality() {
-		return quality;
+	public String getAlmacenamiento() {
+		return almacenamiento;
 	}
 
-	public void setQuality(String language) {
-		this.quality = language;
+	public void setAlmacenamiento(String language) {
+		this.almacenamiento = language;
 	}
 
-	public String getCategory() {
-		return category;
+	public String getCategoria() {
+		return categoria;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategoria(String category) {
+		this.categoria = category;
 	}
 
-	public int getNumberOfMiles() {
-		return numberOfMiles;
+	public int getTiempoPrepar() {
+		return tiempoPrepar;
 	}
 
-	public void setNumberOfMiles(int numberOfPages) {
-		this.numberOfMiles = numberOfPages;
+	public void setTiempoPrepar(int numberOfPages) {
+		this.tiempoPrepar = numberOfPages;
 	}
 
-	public String getFormat() {
-		return format;
+	public String getAlmacen() {
+		return almacen;
 	}
 
-	public void setFormat(String format) {
-		this.format = format;
+	public void setAlmacen(String format) {
+		this.almacen = format;
 	}
 
-	public int getRegisterNumber() {
-		return registerNumber;
+	public double getPrecioLista() {
+		return precioLista;
 	}
 
-	public void setRegisterNumber(int isbn) {
-		this.registerNumber = isbn;
+	public void setPrecioLista(double listPrice) {
+		this.precioLista = listPrice;
 	}
 
-	public double getShippingWeight() {
-		return shippingWeight;
+	public double getPrecioPublico() {
+		return precioPublico;
 	}
 
-	public void setShippingWeight(double shippingWeight) {
-		this.shippingWeight = shippingWeight;
-	}
-
-	public double getListPrice() {
-		return listPrice;
-	}
-
-	public void setListPrice(double listPrice) {
-		this.listPrice = listPrice;
-	}
-
-	public double getOurPrice() {
-		return ourPrice;
-	}
-
-	public void setOurPrice(double ourPrice) {
-		this.ourPrice = ourPrice;
+	public void setPrecioPublico(double ourPrice) {
+		this.precioPublico = ourPrice;
 	}
 
 	public boolean isActive() {
@@ -157,29 +133,27 @@ public class BikeCatalog {
 		this.active = active;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescripcion(String description) {
+		this.descripcion = description;
 	}
 
-	public int getInStockNumber() {
-		return inStockNumber;
+	public int getCantidadDisponible() {
+		return cantidadDisponible;
 	}
 
-	public void setInStockNumber(int inStockNumber) {
-		this.inStockNumber = inStockNumber;
+	public void setCantidadDisponible(int inStockNumber) {
+		this.cantidadDisponible = inStockNumber;
 	}
 
-	public MultipartFile getBikeImage() {
-		return bikeImage;
+	public MultipartFile getImagenPastel() {
+		return imagenPastel;
 	}
 
-	public void setBikeImage(MultipartFile bikeImage) {
-		this.bikeImage = bikeImage;
+	public void setImagenPastel(MultipartFile bikeImage) {
+		this.imagenPastel = bikeImage;
 	}
-	
-	
 }
