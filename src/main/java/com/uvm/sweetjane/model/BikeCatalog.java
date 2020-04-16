@@ -49,80 +49,80 @@ public class BikeCatalog {
 		return nombre;
 	}
 
-	public void setNombre(String title) {
-		this.nombre = title;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getSabor() {
 		return sabor;
 	}
 
-	public void setSabor(String author) {
-		this.sabor = author;
+	public void setSabor(String sabor) {
+		this.sabor = sabor;
 	}
 
 	public String getPorciones() {
 		return porciones;
 	}
 
-	public void setPorciones(String publisher) {
-		this.porciones = publisher;
+	public void setPorciones(String porciones) {
+		this.porciones = porciones;
 	}
 
 	public String getFechaPublicacion() {
 		return fechaPublicacion;
 	}
 
-	public void setFechaPublicacion(String publicationDate) {
-		this.fechaPublicacion = publicationDate;
+	public void setFechaPublicacion(String fechaPublicacion) {
+		this.fechaPublicacion = fechaPublicacion;
 	}
 
 	public String getAlmacenamiento() {
 		return almacenamiento;
 	}
 
-	public void setAlmacenamiento(String language) {
-		this.almacenamiento = language;
+	public void setAlmacenamiento(String almacenamiento) {
+		this.almacenamiento = almacenamiento;
 	}
 
 	public String getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(String category) {
-		this.categoria = category;
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 	public int getTiempoPrepar() {
 		return tiempoPrepar;
 	}
 
-	public void setTiempoPrepar(int numberOfPages) {
-		this.tiempoPrepar = numberOfPages;
+	public void setTiempoPrepar(int tiempoPrepar) {
+		this.tiempoPrepar = tiempoPrepar;
 	}
 
 	public String getAlmacen() {
 		return almacen;
 	}
 
-	public void setAlmacen(String format) {
-		this.almacen = format;
+	public void setAlmacen(String almacen) {
+		this.almacen = almacen;
 	}
 
 	public double getPrecioLista() {
 		return precioLista;
 	}
 
-	public void setPrecioLista(double listPrice) {
-		this.precioLista = listPrice;
+	public void setPrecioLista(double precioLista) {
+		this.precioLista = precioLista;
 	}
 
 	public double getPrecioPublico() {
 		return precioPublico;
 	}
 
-	public void setPrecioPublico(double ourPrice) {
-		this.precioPublico = ourPrice;
+	public void setPrecioPublico(double precioPublico) {
+		this.precioPublico = precioPublico;
 	}
 
 	public boolean isActive() {
@@ -137,23 +137,23 @@ public class BikeCatalog {
 		return descripcion;
 	}
 
-	public void setDescripcion(String description) {
-		this.descripcion = description;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public int getCantidadDisponible() {
 		return cantidadDisponible;
 	}
 
-	public void setCantidadDisponible(int inStockNumber) {
-		this.cantidadDisponible = inStockNumber;
+	public void setCantidadDisponible(int cantidadDisponible) {
+		this.cantidadDisponible = cantidadDisponible;
 	}
 
 	public MultipartFile getImagenPastel() {
 		return imagenPastel;
 	}
 
-	public void setImagenPastel(MultipartFile bikeImage) {
-		this.imagenPastel = bikeImage;
+	public void setImagenPastel(MultipartFile imagenPastel) {
+		this.imagenPastel = imagenPastel;
 	}
 }

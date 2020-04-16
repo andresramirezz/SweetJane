@@ -13,43 +13,45 @@
 	
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/admin.css" th:href="@{/css/admin.css}">
-    <title> Admin </title>
+    <title> Administrador </title>
 
 </head>
 <body>
 	<div>
 		<br/>
-		<img class="img-responsive center-block" th:src="@{/img/icon.png}" style="width: 250px;"/>
+		<img class="img-responsive center-block" th:src="@{/img/Logo2.png}" style="width: 120px;"/>
 	</div>
 
 	<div th:fragment="navbar">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href="#">ADMIN Portal</a>
+		<nav class="navbar navbar-expand-md navbar-light bg-light">
+		  <a class="navbar-brand" href="#">Portal ADMINISTRADOR</a>
 		  <button 	class="navbar-toggler" type="button" data-toggle="collapse" 
-		  			data-target="#navbarNav" aria-controls="navbarNav" 
+		  			data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
 		  			aria-expanded="false" aria-label="Toggle navigation">
 		    		<span class="navbar-toggler-icon"></span>
 		  </button>
-		  <div class="collapse navbar-collapse" id="navbarNav">
-		    <ul class="navbar-nav">
-			      <li class="nav-item">
-			        <a class="nav-link" th:href="@{/addBike}">Add a new Bike <span class="sr-only">(current)</span></a>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item active">
+			        <a class="nav-link" th:href="@{/addBike}">Agrege un producto <span class="sr-only">(current)</span></a>
 			      </li>
 			      <li class="nav-item">
-			        <a class="nav-link" th:href="@{/bikeList}">View Bikes list</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" th:href="@{/bikeshelf}">View Bikes Shelf</a>
+			        <a class="nav-link" th:href="@{/bikeshelf}">Catalogo</a>
 			      </li>
 
 		    </ul>
 		  </div>
 		  <div>
 			   	<form th:action="@{/logout}" method="post">
-		   		    <input type="submit" value="Logout" class="btn btn-warning"/>
+		   		    <input type="submit" value="Salir" class="btn btn-warning"/>
 		  	 	</form>
 		  </div>
 		</nav>
 	</div>
+	<a style="background-color:gray;color:white;text-decoration:none;padding:2px 3px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:9px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@biglaughkitchen?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Deva Williamson"><span style="display:inline-block;padding:1px 1px"><svg xmlns="http://www.w3.org/2000/svg" style="height:8px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:1px 1px">Deva Williamson</span></a>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

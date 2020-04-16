@@ -16,29 +16,29 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/menu.css" th:href="@{/css/menu.css}">
 
-    <title>Welcome to BuyCycle.com!</title>
+    <title>Welcome to SweetJane.com!</title>
 </head>
 <body>
     <div class="modal-dialog text-center">
-        <div class="col-sm-6 main-section">
+        <div class="col-sm-8 main-section">
             <div class="modal-content">
                 <div class="col-12 user-img">
-                    <img src="../img/man-avatar.png"/>
+                    <img src="../img/Logo.png"/>
                 </div>
 		<div class="alert alert-success" role="alert">
 		  
-		  <h4 class="alert-heading">Well done!</h4>
+		  <h4 class="alert-heading">Sweet!</h4>
 
-   			 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+   			 <h1 th:inline="text">Bienvenido [[${#httpServletRequest.remoteUser}]]!</h1>
    			 <form th:action="@{/logout}" method="post">
-   		     <input type="submit" value="Logout" class="btn btn-warning"/>
+   		     <input type="submit" value="Salir" class="btn btn-warning"/>
   			  </form>
-  			  <h1><a th:href="@{/admin}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
+  			  <h1><a th:href="@{/admin}"> continuar</a></h1>
 
 		  
-		  <p>Aww yeah, you successfully logged into BuyCycle site.</p>
+		  <p>Ha ingresado correctamente al sitio SweetJane.com</p>
 		  <hr>
-		  <p class="mb-0">Welcome !!!.</p>
+		  <p class="mb-0">De click en continuar !!!.</p>
 			
 		</div>
             </div>

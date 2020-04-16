@@ -30,9 +30,9 @@ public class MainController {
 		return "menu";
 	}
 	
-	@RequestMapping("/user")
+	@RequestMapping("/NewFile")
 	public String user() {
-		return "user";
+		return "NewFile";
 	}
 	
 	@RequestMapping("/admin")

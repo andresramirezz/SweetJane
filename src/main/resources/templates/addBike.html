@@ -16,19 +16,19 @@
 	
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/admin.css" th:href="@{/css/admin.css}"/>
-    <title> AddBike </title>
+    <title> AgregarProducto </title>
 
 </head>
 
 <body>
 	<div>
 		<br/>
-		<img class="img-responsive center-block" th:src="@{/img/icon.png}" style="width: 250px;"/>
+		<img class="img-responsive center-block" th:src="@{/img/Logo2.png}" style="width: 110px;"/>
 	</div>
 
 	<div th:fragment="navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href="#">ADMIN Portal</a>
+		  <a class="navbar-brand" href="#">Portal ADMINISTRADOR</a>
 		  <button 	class="navbar-toggler" type="button" data-toggle="collapse" 
 		  			data-target="#navbarNav" aria-controls="navbarNav" 
 		  			aria-expanded="false" aria-label="Toggle navigation">
@@ -36,207 +36,194 @@
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
-			      <li class="nav-item">
-			        <a class="nav-link" th:href="@{/bikeList}">View Bikes list</a>
-			      </li>
-			      <li class="nav-item">
-			        <a class="nav-link" th:href="@{/bikeshelf}">View Bikes Shelf</a>
-			      </li>
-
+			      <li class="nav-item"><a class="nav-link" th:href="@{/bikeshelf}">Catálogo</a></li>
 		    </ul>
 		  </div>
 		  <div>
-			   	<form th:action="@{/logout}" method="post">
-		   		    <input type="submit" value="Logout" class="btn btn-warning"/>
-		  	 	</form>
+		   	<form th:action="@{/logout}" method="post">
+	   		    <input type="submit" value="Salir" class="btn btn-warning"/>
+	  	 	</form>
 		  </div>
 		</nav>
 	</div>
+	
   	<div class="container">
-		<div class="row>">
-			<form class="form-horizontal" th:action="@{/addBike}" method="post" enctype="multipart/form-data">
+		<div class="row justify-content-md-center">
 			  <fieldset>
-				  <legend class="center-block">New Bike Information
-				  <span style="font-size: small"> (* is a required field)</span></legend>
-				  
+				  <legend class="center-block">Agregar un nuevo producto
+				  <span style="font-size: small"> (* campos requeridos)</span></legend>
+			  </fieldset>
+		</div>
+	</div>
+
+  	<div class="container">
+		<div class="row">
+		<div class="col">
+			<form class="form-horizontal" th:action="@{/addBike}" method="post" enctype="multipart/form-data">
 				  
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="brand">* Brand</label>
-					   	<div class="col-md-4">
-					   	<input 	type="text" class="form-control" id="brand" th:value="${bike_catalog.brand}"
-					    		required="required" placeholder="Brand" name="brand" />
-					    		<span class="help-block">Brand of the bike</span>
+					    <label class="col-md-8 control-label" for="nombre">* Nombre del producto</label>
+					   	<div class="col-md-8">
+					   		<input 	type="text" class="form-control" id="nombre" th:value="${bike_catalog.nombre}"
+					    		required="required" placeholder="Nombre" name="nombre" />
 					    </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="owner">* Owner</label>
-					    <div class="col-md-4">
-					    <input 	type="text" class="form-control" id="owner" th:value="${bike_catalog.owner}"
-					    		required="required" placeholder="Owner" name="owner"/>
-					    		<span class="help-block">Owner of the bike</span>
+					    <label class="col-md-2 control-label" for="sabor">* Sabor</label>
+					    <div class="col-md-8">
+					    	<input 	type="text" class="form-control" id="sabor" th:value="${bike_catalog.sabor}"
+					    		required="required" placeholder="Sabor" name="sabor"/>
 					  </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="nickname">Nickname</label>
-					    <div class="col-md-4">
-					   	<input 	type="text" class="form-control" id="nickname" th:value="${bike_catalog.nickname}"
-					    		required="required" placeholder="Nickname" name="nickname"/>
-					    		<span class="help-block">Nickname of the bike</span>
+					    <label class="col-md-2 control-label" for="porciones">Porciones</label>
+					    <div class="col-md-6">
+					   	<input 	type="text" class="form-control" id="porciones" th:value="${bike_catalog.porciones}"
+					    		required="required" placeholder="Porciones" name="porciones"/>
 					  </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="publicationDate">Publication Date</label>
-					   <div class="col-md-4">
-					   <input 	type="date" class="form-control" id="publicationDate" th:value="${bike_catalog.publicationDate}"
-					    		required="required" placeholder="Publication Date of the bike" name="publicationDate"/>
-					    		<span class="help-block">Publication Date of the bike</span>
+					    <label class="col-md-4 control-label" for="fechaPublicacion">Fecha de lanzamiento</label>
+					   <div class="col-md-6">
+					   <input 	type="date" class="form-control" id="fechaPublicacion" th:value="${bike_catalog.fechaPublicacion}"
+					    		required="required" placeholder="Fecha de Publicacion" name="fechaPublicacion"/>
 					  </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label"for="quality">Conditions</label>
-					   <div class="col-md-4">
-					   		<select th:value="${bike_catalog.quality}" id="quality" name="quality" class="form-control">
-					   			<option value="Like new">Like new</option>
-					   			<option value="Good condition">Good condition</option>
-					   			<option value="Need reparation">Need reparation</option>
+					    <label class="col-md-2 control-label"for="almacenamiento">Almacenamiento</label>
+					   <div class="col-md-6">
+					   		<select th:value="${bike_catalog.almacenamiento}" id="almacenamiento" name="almacenamiento" class="form-control">
+					   			<option value="Refrigerar">Refrigerar</option>
+					   			<option value="Temperatura ambiente">Temperatura ambiente</option>
+					   			<option value="Congelar">Congelar</option>
 					   		</select>
 					   </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-1 control-label"for="category">*Category</label>
-						   <div class="col-md-4">
-						   		<select th:value="${bike_catalog.category}" id="category" class="form-control" name="category">
-						   			<option value="" selected="selected" disabled="disabled">Please select an option</option>
-						   			<option value="Mountain Bike" th:selected="(${bike_catalog.category}=='Mountain Bike')">Mountain Bike</option>
-						   			<option value="Road Bike" th:selected="(${bike_catalog.category}=='Road Bike')">Road Bike</option>
+					    <label class="col-md-1 control-label"for="categoria">*Categoria</label>
+						   <div class="col-md-6">
+						   		<select th:value="${bike_catalog.categoria}" id="categoria" class="form-control" name="categoria">
+						   			<option value="" selected="selected" disabled="disabled">Seleccione una opción</option>
+						   			<option value="Línea Diabéticos" th:selected="(${bike_catalog.categoria}=='Línea Diabéticos')">Línea Diabéticos</option>
+						   			<option value="Sin Calorías" th:selected="(${bike_catalog.categoria}=='Sin Calorías')">Sin Calorías</option>
 						   		</select>
 						   </div>
 					  </div>
+			</form>
+		</div>
 
+
+		<div class="col">
+			<form class="form-horizontal" th:action="@{/addBike}" method="post" enctype="multipart/form-data">
+				  
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="numberOfMiles">Miles</label>
+					    <label class="col-md-4 control-label" for="tiempoPrepar">Tiempo de Preparación</label>
 						   <div class="col-md-4"> 
-						   <input type="number" class="form-control" id="pageNumber" th:value="${bike_catalog.numberOfMiles}"
-						    		required="required" placeholder="Number Of Miles" name="numberOfMiles"/>
-						    <span class="help-block">Miles of the bike</span>
+						   <input type="number" class="form-control" id="pageNumber" th:value="${bike_catalog.tiempoPrepar}"
+						    		required="required" placeholder="Number Of Miles" name="tiempoPrepar"/>
 						  </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label"for="format">Location</label>
+					    <label class="col-md-2 control-label"for="almacen">Almacén</label>
 						   <div class="col-md-4">
-						   		<select th:value="${bike_catalog.format}" id="format" class="form-control" name="format">
-						   			<option value="Out of USA">Out of USA</option>
-						   			<option value="USA">USA</option>
+						   		<select th:value="${bike_catalog.almacen}" id="almacen" class="form-control" name="almacen">
+						   			<option value="Monterrey">Monterrey</option>
+						   			<option value="Querétaro">Querétaro</option>
 						   		</select>
 						   </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="registerNumber">Register Number</label>
-						   <div class="col-md-4">
-						   	<input 	type="text" class="form-control" id="registerNumber" th:value="${bike_catalog.registerNumber}"
-						    		placeholder="Register Number" name="registerNumber"/>
-						    <span class="help-block">Register Number of the bike</span>
-						  </div>
-					  </div>
-
-					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="shippingWeight">Shipping Weight</label>
-						   	<div class="col-md-3">
+					    <label class="col-md-4 control-label"for="precioLista">Precio de Lista</label>
+						   	<div class="col-md-4">
 						   		<div class="input-group">
-								   	<input 	th:value="${bike_catalog.shippingWeight}" type="number"
-								   			class="form-control" id="shippingWeight"
-								    		placeholder="Shipping Weight" name="shippingWeight" />
+						   		<span class="input-group-addon">$</span>
+								   	<input 	th:value="${bike_catalog.precioLista}" type="number"
+								   			class="form-control" id="precioLista"
+								    		placeholder="Precio de Lista" name="precioLista"/>
 							   	</div>
-							   	<span class="help-block">Shipping Weight of the bike</span>
 						   	</div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label"for="listPrice">list Price</label>
-						   	<div class="col-md-3">
+					    <label class="col-md-4 control-label"for="precioPublico">Precio al Público</label>
+						   	<div class="col-md-4">
 						   		<div class="input-group">
-						   		<span class="input-group-addon">USD$</span>
-								   	<input 	th:value="${bike_catalog.listPrice}" type="number"
-								   			class="form-control" id="listPrice"
-								    		placeholder="list Price" name="listPrice"/>
+						   		<span class="input-group-addon">$</span>
+								   	<input 	th:value="${bike_catalog.precioPublico}" type="number"
+								   			class="form-control" id="precioPublico"
+								    		placeholder="Precio Publico" name="precioPublico"/>
 							   	</div>
-							   	<span class="help-block">list Price of the bike</span>
 						   	</div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label"for="ourPrice">Our Price</label>
-						   	<div class="col-md-3">
-						   		<div class="input-group">
-						   		<span class="input-group-addon">USD$</span>
-								   	<input 	th:value="${bike_catalog.ourPrice}" type="number"
-								   			class="form-control" id="ourPrice"
-								    		placeholder="Our Price" name="ourPrice"/>
-							   	</div>
-							   	<span class="help-block">Our Price of the bike</span>
-						   	</div>
-					  </div>
-
-					  <div class="form-group">
-					    <label class="col-md-2 control-label"for="inStockNumber">Number in stock</label>
-						   	<div class="col-md-2">
+					    <label class="col-md-5 control-label"for="cantidadDisponible">Cantidad Disponible</label>
+						   	<div class="col-md-4">
 						   		<div class="input-group">
 						   		<span class="input-group-addon"></span>
-								   	<input 	th:value="${bike_catalog.inStockNumber}" type="number"
-								   			class="form-control" id="inStockNumber"
-								    		placeholder="Number of in-stock bikes" name="inStockNumber"/>
+								   	<input 	th:value="${bike_catalog.cantidadDisponible}" type="number"
+								   			class="form-control" id="cantidadDisponible"
+								    		placeholder="Cantidad Disponible" name="cantidadDisponible"/>
 							   	</div>
-							   	<span class="help-block">In-stock</span>
 						   	</div>
 					  </div>
 
 					  <div class="form-group">
-					    <label class="col-md-2 control-label" for="status">Status</label>
-							<div class="col-md-8">
-							   		<label><input value="true" type="radio" name="active" checked="checked" class="form-control" />Active</label>
-							   		<label><input value="false" type="radio" name="active" class="form-control" />Inactive</label>
-						   	<span class="help-block"></span>
+					    <label class="col-md-5 control-label" for="status">Estado del producto</label>
+							<div class="col-md-6">
+							   		<label><input value="true" type="radio" name="active" checked="checked" class="form-control" />Activo</label>
+							   		<label><input value="false" type="radio" name="active" class="form-control" />Inactivo</label>
 						   	</div>
 					  </div>
+			</form>
+		</div>
 
+		</div>
+		<div class="row">
+		<div class="col">
+			<form class="form-horizontal" th:action="@{/addBike}" method="post" enctype="multipart/form-data">
+				  
 					  <div class="form-group">
-					    	<label class="col-md-2 control-label" for="description">Description</label>
-					    	<div class="col-md-8">
-					   			<textarea name="description" rows="5" 
-					   			class="form-control" id="description" th:value="${bike_catalog.description}"
-					    				placeholder="Description" ></textarea>
-					    		<span class="help-block">Description of the bike</span>
+					    	<label class="col-md-2 control-label" for="descripcion">Ingredientes</label>
+					    	<div class="col-md">
+					   			<textarea name="description" rows="3" 
+					   			class="form-control" id="descripcion" th:value="${bike_catalog.descripcion}"
+					    				placeholder="Ingredientes" ></textarea>
 					  		</div>
 					  </div>
 					  
 					  <div class="form-group">
 						  	<div class="col-md-2">
-						  		<label for="bikeImage">Upload Bicycle image</label>
+						  		<label for="imagenPastel">Cargar imagen</label>
 						  	</div>
 						  	<div class="col-md-8">
-						  		<input id="bikeImage" type="file" name="bikeImage" th:value="${bike_catalog.bikeImage}" />	
+						  		<input id="imagenPastel" type="file" name="imagenPastel" th:value="${bike_catalog.imagenPastel}" />	
 						  	</div>
 					  </div>
 
 				  <div class="form-group">
-					  	<div class="col-md-6">
-						  <div class="col-md-8">
-						  		<button type="submit" class="tn btn-lg btn-success">Add Bike</button>
-						  		<a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
+					  	<div class="col-md">
+						  <div class="col-md">
+						  		<button type="submit" class="tn btn-lg btn-success">Agregar Imagen</button>
+						  		<a class="btn btn-danger" th:href="@{/admin}">Cancelar</a>
 						  </div>
 				  		</div>
 				  </div>
-				  
-			  </fieldset>
 			</form>
 		</div>
+		</div>
+	
 	</div>
+	
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
  </body>
 </html>
