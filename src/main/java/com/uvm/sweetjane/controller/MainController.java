@@ -8,8 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @author Cynthia Mejia
- * @author Dyana Montoya
  * @author Andres Ramirez
  *	Token: 27a4b00c-1b54-402b-9b6c-396cdab28b23
  *	user: andresramirezz@hotmail.com
@@ -30,14 +28,8 @@ public class MainController {
 		return "menu";
 	}
 	
-	@RequestMapping("/NewFile")
-	public String user() {
-		return "NewFile";
-	}
-	
 	@RequestMapping("/admin")
 	public String admin() {
 		return "admin";
 	}
-	
 }

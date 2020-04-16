@@ -1,6 +1,6 @@
 /**
  * @author Andres Ramirez
- * File: BikeCatalog.java
+ * File: PastelCatalogo.java
  * Date 02/29/2020
  * 
  */
@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity
-public class BikeCatalog {
+public class PastelCatalogo {
 	
 	@Id
 	@GeneratedValue( strategy=GenerationType.AUTO )

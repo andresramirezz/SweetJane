@@ -1,6 +1,6 @@
 /**
  * @author Andres Ramirez
- * File: BikeCatalogController.java
+ * File: CatalogoController.java
  * Date 02/29/2020
  * 
  */
@@ -21,57 +21,57 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.uvm.sweetjane.model.BikeCatalog;
-import com.uvm.sweetjane.service.BikeCatalogService;
+import com.uvm.sweetjane.model.PastelCatalogo;
+import com.uvm.sweetjane.service.PastelCatalogoService;
 
 @Controller
-public class BikeCatalogController {
+public class CatalogoController {
 	
 	
 	@Autowired
-	private BikeCatalogService bikeCatalogService;
+	private PastelCatalogoService bikeCatalogService;
 
-	@RequestMapping ( value = "/addBike", method=RequestMethod.GET )
-	public String addBike ( Model model ) {
-		BikeCatalog bc = new BikeCatalog();
-		model.addAttribute("bike_catalog", bc);
-		return "addBike";
+	@RequestMapping ( value = "/agregarProducto", method=RequestMethod.GET )
+	public String agregarProducto ( Model model ) {
+		PastelCatalogo bc = new PastelCatalogo();
+		model.addAttribute("pastel_catalogo", bc);
+		return "agregarProducto";
 	}
 
-	@RequestMapping ( value = "/addBike", method=RequestMethod.POST )
+	@RequestMapping ( value = "/agregarProducto", method=RequestMethod.POST )
 	public String addBikePost 
-		(@ModelAttribute ("bike_catalog") BikeCatalog bc, HttpServletRequest request) {
+		(@ModelAttribute ("pastel_catalogo") PastelCatalogo bc, HttpServletRequest request) {
 		bikeCatalogService.save (bc);
 		
-		MultipartFile bikeImage = bc.getImagenPastel();
+		MultipartFile imagenPastel = bc.getImagenPastel();
 		
 				try {
-					byte[] bytes = bikeImage.getBytes();
+					byte[] bytes = imagenPastel.getBytes();
 					String name = bc.getId()+".png";
 					BufferedOutputStream stream = new BufferedOutputStream 
-						(new FileOutputStream("src/main/resources/static/img/bike/"+name));
+						(new FileOutputStream("src/main/resources/static/img/producto/"+name));
 					stream.write(bytes);
 					stream.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 		
-		return "redirect:bikeList";
+		return "redirect:catalogoProducto";
 	}
 
 	@RequestMapping ( "/bikeList" )
 	public String bikeList ( Model model ) {
-		List<BikeCatalog> bikeList = bikeCatalogService.findAll();
+		List<PastelCatalogo> bikeList = bikeCatalogService.findAll();
 		model.addAttribute("bikeList", bikeList);
 		
 		return "bikeList";
 	}
 	
-	@RequestMapping ( "/bikeshelf" )
+	@RequestMapping ( "/catalogoProducto" )
 	public String bikeshelf ( Model model ) {
-		List<BikeCatalog> bikeshelf = bikeCatalogService.findAll();
+		List<PastelCatalogo> bikeshelf = bikeCatalogService.findAll();
 		model.addAttribute("bikeList", bikeshelf);
 		
-		return "bikeshelf";
+		return "catalogoProducto";
 	}
 }
