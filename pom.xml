@@ -14,7 +14,7 @@
 	<artifactId>sweetjane</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Project</name>
-	<description>BuyCycle Project for Spring Boot in PerScholas</description>
+	<description>Sweet Jane - Proyecto para UVM</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,7 +42,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- Security -->
+		<!-- Seguridad y conexión a MySQL-->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-security</artifactId>
@@ -50,7 +50,6 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<!-- <scope>runtime</scope> -->
 		</dependency>
 
 		<dependency>
